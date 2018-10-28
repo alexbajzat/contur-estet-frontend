@@ -3,7 +3,7 @@
     display: flex;
     width: 100%;
     opacity: 0.6;
-    padding: 1% 12% 0 5%;
+    padding: 2% 7% 0 5%;
     background-color: #000000; 
     -webkit-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
     -moz-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
@@ -22,10 +22,30 @@
 
 .menu-item {
     list-style: none;
-    padding: 0px 18px 2px 18px;
+    padding: 0px 30px 2px 30px;
     color: white;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
 }
 
-.menu-item:hover {
-  //todo 
-}
+.menu-item > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .menu-item > a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
